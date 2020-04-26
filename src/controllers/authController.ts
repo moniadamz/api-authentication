@@ -12,7 +12,7 @@ export class AuthController {
     }
     res.send({
       token: jwt.sign({ user, password }, process.env.SECRET, {
-        expiresIn: 86400
+        expiresIn: process.env.EXPIRES
       })
     })
   }
